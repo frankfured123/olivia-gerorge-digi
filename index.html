@@ -3,19 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#691628">
+<meta name="theme-color" content="#0857AD">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Digital Licence">
-<link rel="apple-touch-icon" href="img/app-icon.png?v=1792135940">
-<link rel="icon" type="image/png" href="img/app-icon.png?v=1792135940">
+<meta name="apple-mobile-web-app-title" content="Service Qld">
+<link rel="apple-touch-icon" href="img/app-icon.png">
+<link rel="icon" type="image/png" href="img/app-icon.png">
 <link rel="manifest" href="manifest.webmanifest">
-<title>QLD Digital Licence</title>
+<title>Service Qld</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap">
-<link rel="stylesheet" href="styles.css?v=1792135940">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap">
+<link rel="stylesheet" href="styles.css?v=1794380657">
 </head>
 <body>
 
@@ -23,7 +23,8 @@
 
   <!-- ══ Splash ══ -->
   <div class="screen" id="splash">
-    <img src="img/splash.jpg?v=1792135940" alt="Queensland Digital Licence">
+    <img class="splash-logo" src="img/sq-logo-big.png?v=1794380657" alt="Service Queensland">
+    <img class="splash-foot" src="img/sq-footer.png?v=1794380657" alt="Delivering for Queensland — Queensland Government">
   </div>
 
   <!-- ══ PIN ══ -->
@@ -32,9 +33,9 @@
       <svg class="pin-lock" viewBox="0 0 88 120" fill="none" aria-hidden="true">
         <defs>
           <linearGradient id="lockGrad" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0"   stop-color="#5F1049"/>
-            <stop offset=".55" stop-color="#8E1A44"/>
-            <stop offset="1"   stop-color="#C8455E"/>
+            <stop offset="0"   stop-color="#0A4E8F"/>
+            <stop offset=".55" stop-color="#0B63B8"/>
+            <stop offset="1"   stop-color="#2E8FD8"/>
           </linearGradient>
         </defs>
         <rect x="4" y="44" width="80" height="72" rx="17" stroke="url(#lockGrad)" stroke-width="8"/>
@@ -68,7 +69,7 @@
         <div class="key blank"></div>
         <div class="key" data-key="0">0</div>
         <div class="key" data-key="del" aria-label="Delete">
-          <svg viewBox="0 0 96 66" fill="none" stroke="#6B1030" stroke-width="6"
+          <svg viewBox="0 0 96 66" fill="none" stroke="#0B63B8" stroke-width="6"
                stroke-linecap="round" stroke-linejoin="round">
             <path d="M31 5 5 33l26 28h60V5H31z"/>
             <path d="M50 22l22 22M72 22 50 44"/>
@@ -80,9 +81,9 @@
 
   <!-- ══ Loading ══ -->
   <div class="screen" id="loading" hidden>
-    <header class="topbar">
-      <img class="brand" src="img/qg-lockup.png?v=1792135940" alt="Queensland Government">
-      <img class="cog"   src="img/gear.png?v=1792135940" alt="Settings">
+    <header class="topbar sq">
+      <img class="sq-logo" src="img/sq-logo.png?v=1794380657" alt="Service Queensland">
+      <img class="cog" src="img/gear.png?v=1794380657" alt="Settings">
     </header>
 
     <div class="loading-body">
@@ -94,20 +95,20 @@
 
     <nav class="tabbar">
       <svg class="notch" viewBox="0 0 320 40" aria-hidden="true"><path d="M0 37H59.5A155 155 0 0 1 260.5 37H320V40H0Z" fill="#fff"/><path d="M0 37H59.5A155 155 0 0 1 260.5 37H320" fill="none" stroke="#D5D5DA" stroke-width="2"/></svg>
-      <div class="tab active" data-go="home"><span class="ico"><img class="t-home" src="img/tab-home.png?v=1792135940" alt=""></span>Home</div>
-      <div class="tab" data-go="wallet"><span class="ico"><img class="t-wallet" src="img/tab-wallet.png?v=1792135940" alt=""></span>Wallet</div>
-      <div class="tab" data-go="showqr"><span class="ico"><img class="t-qr" src="img/tab-qr.png?v=1792135940" alt=""></span>Show QR</div>
-      <div class="tab" data-go="scanqr"><span class="ico"><img class="t-scan" src="img/tab-scan.png?v=1792135940" alt=""></span>Scan QR</div>
-      <div class="tab" data-go="messages"><span class="ico"><img class="t-msg" src="img/tab-msg.png?v=1792135940" alt=""></span>Messages</div>
+      <div class="tab active" data-go="home"><span class="ico"><img class="t-home" src="img/tab-home.png?v=1794380657" alt=""></span>Home</div>
+      <div class="tab" data-go="wallet"><span class="ico"><img class="t-wallet" src="img/tab-wallet.png?v=1794380657" alt=""></span>Wallet</div>
+      <div class="tab" data-go="showqr"><span class="ico"><img class="t-qr" src="img/tab-qr.png?v=1794380657" alt=""></span>Show QR</div>
+      <div class="tab" data-go="scanqr"><span class="ico"><img class="t-scan" src="img/tab-scan.png?v=1794380657" alt=""></span>Scan QR</div>
+      <div class="tab" data-go="messages"><span class="ico"><img class="t-msg" src="img/tab-msg.png?v=1794380657" alt=""></span>Messages</div>
     </nav>
   </div>
 
   <!-- ══ Home ══ -->
   <div class="screen" id="home" hidden>
 
-    <header class="topbar">
-      <img class="brand" src="img/qg-lockup.png?v=1792135940" alt="Queensland Government">
-      <img class="cog"   src="img/gear.png?v=1792135940" alt="Settings">
+    <header class="topbar sq">
+      <img class="sq-logo" src="img/sq-logo.png?v=1794380657" alt="Service Queensland">
+      <img class="cog" src="img/gear.png?v=1794380657" alt="Settings">
     </header>
 
     <main class="sheet">
@@ -115,53 +116,52 @@
       <div class="pull-gap"></div>
 
       <div class="licence reveal" data-step="1">
-        <img class="thumb" src="img/car-tile.jpg?v=1792135940" alt="">
+        <span class="dl-tile"><svg class="dl-car" viewBox="0 0 120 64" aria-hidden="true"><path d="M14 41V31c0-1.6 1-3 2.5-3.6L28 23l9-13c.7-1 1.8-1.6 3-1.6h26c1.3 0 2.5.7 3.2 1.8L77 23l24 3.5c3 .5 5 3 5 6V41a3 3 0 0 1-3 3H17a3 3 0 0 1-3-3z" fill="#111"/><circle cx="35" cy="45" r="9" fill="#111"/><circle cx="87" cy="45" r="9" fill="#111"/><circle cx="35" cy="45" r="3.4" fill="#E8A457"/><circle cx="87" cy="45" r="3.4" fill="#E8A457"/></svg></span>
         <span class="name">Driver Licence</span>
-        <span class="go"><img src="img/ic-chev.png?v=1792135940" alt=""></span>
+        <svg class="go" viewBox="0 0 24 40" aria-hidden="true"><path d="M5 4l14 16L5 36" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
+
+      <article class="explore reveal" data-step="1">
+        <img class="ex-art" src="img/explore-art.jpg?v=1794380657" alt="">
+        <div class="ex-body">
+          <h3>Explore the app</h3>
+          <p>Learn how to get the most from your Service Queensland app.</p>
+        </div>
+        <button class="ex-close" type="button" aria-label="Dismiss">
+          <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M8 8l24 24M32 8L8 32" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"/></svg>
+        </button>
+      </article>
 
       <h2 class="section-label reveal" data-step="2">Services</h2>
       <div class="services reveal" data-step="2">
-        <div class="service">
-          <span class="icon"><img class="ic-qld" src="img/ic-qld.png?v=1792135940" alt=""></span>
-          <span class="label">Check registration status</span>
-          <img class="out" src="img/ic-ext.png?v=1792135940" alt="Opens in a new window">
-        </div>
-        <div class="service">
-          <span class="icon"><img class="ic-dollar" src="img/ic-dollar.png?v=1792135940" alt=""></span>
-          <span class="label">Renew registration</span>
-          <img class="out" src="img/ic-ext.png?v=1792135940" alt="Opens in a new window">
-        </div>
-        <div class="service">
-          <span class="icon"><img class="ic-gavel" src="img/ic-gavel.png?v=1792135940" alt=""></span>
-          <span class="label">Pay a fine</span>
-          <img class="out" src="img/ic-ext.png?v=1792135940" alt="Opens in a new window">
-        </div>
-        <div class="service">
-          <span class="icon"><img class="ic-pin" src="img/ic-pin.png?v=1792135940" alt=""></span>
-          <span class="label">Find a Customer Service Centre</span>
-          <img class="out" src="img/ic-ext.png?v=1792135940" alt="Opens in a new window">
-        </div>
+        <div class="srow"><span class="sic"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="19" cy="15" r="7" fill="none" stroke="currentColor" stroke-width="3"/><path d="M6 40c0-7.7 5.8-13 13-13 3 0 5.8.9 8 2.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="35" cy="34" r="5.5" fill="none" stroke="currentColor" stroke-width="3"/><path d="M35 25.5v3M35 39.5v3M43.4 29.8l-2.6 1.5M29.2 38l-2.6 1.5M43.4 38.2l-2.6-1.5M29.2 30l-2.6-1.5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></span><span class="slabel">Service Queensland online</span><svg class="out" viewBox="0 0 40 40" aria-hidden="true"><path d="M22 6h12v12" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M34 6 19 21" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"/><path d="M30 24v8a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V12a2 2 0 0 1 2-2h8" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="srow"><span class="sic"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="19" fill="none" stroke="currentColor" stroke-width="3"/><path d="M24 12v12l8 5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="slabel">Journey Planner</span><svg class="out" viewBox="0 0 40 40" aria-hidden="true"><path d="M22 6h12v12" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M34 6 19 21" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"/><path d="M30 24v8a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V12a2 2 0 0 1 2-2h8" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="srow"><span class="sic"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 44s14-13.4 14-23A14 14 0 1 0 10 21c0 9.6 14 23 14 23z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><circle cx="24" cy="20" r="5.5" fill="none" stroke="currentColor" stroke-width="3"/></svg></span><span class="slabel">Find a Customer Service Centre</span><svg class="out" viewBox="0 0 40 40" aria-hidden="true"><path d="M22 6h12v12" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M34 6 19 21" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"/><path d="M30 24v8a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V12a2 2 0 0 1 2-2h8" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </div>
+
+      <h2 class="section-label reveal" data-step="2">Your Services</h2>
+      <div class="services reveal" data-step="2">
+        <div class="srow"><span class="sic"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="9" y="7" width="30" height="27" rx="5" fill="none" stroke="currentColor" stroke-width="3"/><path d="M9 20h30" stroke="currentColor" stroke-width="3"/><circle cx="16.5" cy="27" r="2.6" fill="currentColor"/><circle cx="31.5" cy="27" r="2.6" fill="currentColor"/><path d="M15 34l-4 7M33 34l4 7" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></span><span class="slabel">Transport</span><svg class="go" viewBox="0 0 24 40" aria-hidden="true"><path d="M5 4l14 16L5 36" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       </div>
 
       <h2 class="section-label reveal" data-step="3">Learn more about</h2>
       <div class="learn reveal" data-step="2">
-        <article class="learn-card"><img class="cover" src="img/card-donatelife.jpg?v=1792135940" alt=""><div class="body"><p class="copy">Register as an organ and tissue donor today</p><div class="foot"><img src="img/ic-ext.png?v=1792135940" alt=""></div></div></article>
-        <article class="learn-card"><img class="cover" src="img/card-flood.jpg?v=1792135940" alt=""><div class="body"><p class="copy">Disaster recovery support</p><div class="foot"><img src="img/ic-ext.png?v=1792135940" alt=""></div></div></article>
-        <article class="learn-card"><img class="cover" src="img/card-safer.jpg?v=1792135940" alt=""><div class="body"><p class="copy">Making Qld Safer</p><div class="foot"><img src="img/ic-ext.png?v=1792135940" alt=""></div></div></article>
-        <article class="learn-card"><img class="cover" src="img/card-sports.jpg?v=1792135940" alt=""><div class="body"><p class="copy">Play on sports vouchers</p><div class="foot"><img src="img/ic-ext.png?v=1792135940" alt=""></div></div></article>
-        <article class="learn-card"><img class="cover" src="img/card-home.jpg?v=1792135940" alt=""><div class="body"><p class="copy">A place to call home</p><div class="foot"><img src="img/ic-ext.png?v=1792135940" alt=""></div></div></article>
-        <article class="learn-card"><img class="cover" src="img/card-dfv.jpg?v=1792135940" alt=""><div class="body"><p class="copy">Get walking and start talking to help end DFV</p><div class="foot"><img src="img/ic-ext.png?v=1792135940" alt=""></div></div></article>
-        <article class="learn-card"><img class="cover" src="img/card-app.jpg?v=1792135940" alt=""><div class="body"><p class="copy">The Digital Licence App</p><div class="foot"><img src="img/ic-ext.png?v=1792135940" alt=""></div></div></article>
+        <article class="learn-card"><img class="cover" src="img/card-donatelife.jpg?v=1794380657" alt=""><div class="body"><p class="copy">Register as an organ and tissue donor today</p><div class="foot"><img src="img/ic-ext.png?v=1794380657" alt=""></div></div></article>
+        <article class="learn-card"><img class="cover" src="img/card-flood.jpg?v=1794380657" alt=""><div class="body"><p class="copy">Disaster recovery support</p><div class="foot"><img src="img/ic-ext.png?v=1794380657" alt=""></div></div></article>
+        <article class="learn-card"><img class="cover" src="img/card-safer.jpg?v=1794380657" alt=""><div class="body"><p class="copy">Making Qld Safer</p><div class="foot"><img src="img/ic-ext.png?v=1794380657" alt=""></div></div></article>
+        <article class="learn-card"><img class="cover" src="img/card-sports.jpg?v=1794380657" alt=""><div class="body"><p class="copy">Play on sports vouchers</p><div class="foot"><img src="img/ic-ext.png?v=1794380657" alt=""></div></div></article>
+        <article class="learn-card"><img class="cover" src="img/card-home.jpg?v=1794380657" alt=""><div class="body"><p class="copy">A place to call home</p><div class="foot"><img src="img/ic-ext.png?v=1794380657" alt=""></div></div></article>
+        <article class="learn-card"><img class="cover" src="img/card-dfv.jpg?v=1794380657" alt=""><div class="body"><p class="copy">Get walking and start talking to help end DFV</p><div class="foot"><img src="img/ic-ext.png?v=1794380657" alt=""></div></div></article>
+        <article class="learn-card"><img class="cover" src="img/card-app.jpg?v=1794380657" alt=""><div class="body"><p class="copy">The Service Queensland App</p><div class="foot"><img src="img/ic-ext.png?v=1794380657" alt=""></div></div></article>
       </div>
 
       <div class="view-all reveal" data-step="3">
-        <img class="va-prev" src="img/ic-chev.png?v=1792135940" alt=""><span>VIEW ALL</span>
-        <img src="img/ic-chev.png?v=1792135940" alt="">
+        <img class="va-prev" src="img/ic-chev.png?v=1794380657" alt=""><span>VIEW ALL</span>
+        <img src="img/ic-chev.png?v=1794380657" alt="">
       </div>
 
-      <img class="promo reveal" data-step="3" src="img/banner-roadrules.jpg?v=1792135940"  alt="Road Rules Refresher">
-      <img class="promo reveal" data-step="3" src="img/banner-delivering.jpg?v=1792135940" alt="Delivering for Queensland">
+      <img class="promo reveal" data-step="3" src="img/banner-roadrules.jpg?v=1794380657"  alt="Road Rules Refresher">
+      <img class="promo reveal" data-step="3" src="img/banner-delivering.jpg?v=1794380657" alt="Delivering for Queensland">
     </main>
 
     <div class="consent" id="consent" hidden>
@@ -177,11 +177,11 @@
 
     <nav class="tabbar">
       <svg class="notch" viewBox="0 0 320 40" aria-hidden="true"><path d="M0 37H59.5A155 155 0 0 1 260.5 37H320V40H0Z" fill="#fff"/><path d="M0 37H59.5A155 155 0 0 1 260.5 37H320" fill="none" stroke="#D5D5DA" stroke-width="2"/></svg>
-      <div class="tab active" data-go="home"><span class="ico"><img class="t-home" src="img/tab-home.png?v=1792135940" alt=""></span>Home</div>
-      <div class="tab" data-go="wallet"><span class="ico"><img class="t-wallet" src="img/tab-wallet.png?v=1792135940" alt=""></span>Wallet</div>
-      <div class="tab" data-go="showqr"><span class="ico"><img class="t-qr" src="img/tab-qr.png?v=1792135940" alt=""></span>Show QR</div>
-      <div class="tab" data-go="scanqr"><span class="ico"><img class="t-scan" src="img/tab-scan.png?v=1792135940" alt=""></span>Scan QR</div>
-      <div class="tab" data-go="messages"><span class="ico"><img class="t-msg" src="img/tab-msg.png?v=1792135940" alt=""></span>Messages</div>
+      <div class="tab active" data-go="home"><span class="ico"><img class="t-home" src="img/tab-home.png?v=1794380657" alt=""></span>Home</div>
+      <div class="tab" data-go="wallet"><span class="ico"><img class="t-wallet" src="img/tab-wallet.png?v=1794380657" alt=""></span>Wallet</div>
+      <div class="tab" data-go="showqr"><span class="ico"><img class="t-qr" src="img/tab-qr.png?v=1794380657" alt=""></span>Show QR</div>
+      <div class="tab" data-go="scanqr"><span class="ico"><img class="t-scan" src="img/tab-scan.png?v=1794380657" alt=""></span>Scan QR</div>
+      <div class="tab" data-go="messages"><span class="ico"><img class="t-msg" src="img/tab-msg.png?v=1794380657" alt=""></span>Messages</div>
     </nav>
   </div>
 
@@ -193,9 +193,9 @@
     <main class="sheet wallet-sheet">
       <div class="pull-gap"></div>
       <div class="licence">
-        <img class="thumb" src="img/car-tile.jpg?v=1792135940" alt="">
+        <span class="dl-tile"><svg class="dl-car" viewBox="0 0 120 64" aria-hidden="true"><path d="M14 41V31c0-1.6 1-3 2.5-3.6L28 23l9-13c.7-1 1.8-1.6 3-1.6h26c1.3 0 2.5.7 3.2 1.8L77 23l24 3.5c3 .5 5 3 5 6V41a3 3 0 0 1-3 3H17a3 3 0 0 1-3-3z" fill="#111"/><circle cx="35" cy="45" r="9" fill="#111"/><circle cx="87" cy="45" r="9" fill="#111"/><circle cx="35" cy="45" r="3.4" fill="#E8A457"/><circle cx="87" cy="45" r="3.4" fill="#E8A457"/></svg></span>
         <span class="name">Driver Licence</span>
-        <span class="go"><img src="img/ic-chev.png?v=1792135940" alt=""></span>
+        <svg class="go" viewBox="0 0 24 40" aria-hidden="true"><path d="M5 4l14 16L5 36" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
       <button class="add-btn" type="button">ADD
         <svg viewBox="0 0 46 48" aria-hidden="true"><path d="M23 4v40M3 24h40" stroke="#fff" stroke-width="5" stroke-linecap="round" fill="none"/></svg>
@@ -204,11 +204,11 @@
 
     <nav class="tabbar">
       <svg class="notch" viewBox="0 0 320 40" aria-hidden="true"><path d="M0 37H59.5A155 155 0 0 1 260.5 37H320V40H0Z" fill="#fff"/><path d="M0 37H59.5A155 155 0 0 1 260.5 37H320" fill="none" stroke="#D5D5DA" stroke-width="2"/></svg>
-      <div class="tab" data-go="home"><span class="ico"><img class="t-home" src="img/tab-home-off.png?v=1792135940" alt=""></span>Home</div>
-      <div class="tab active" data-go="wallet"><span class="ico"><img class="t-wallet" src="img/tab-wallet-on.png?v=1792135940" alt=""></span>Wallet</div>
-      <div class="tab" data-go="showqr"><span class="ico"><img class="t-qr" src="img/tab-qr.png?v=1792135940" alt=""></span>Show QR</div>
-      <div class="tab" data-go="scanqr"><span class="ico"><img class="t-scan" src="img/tab-scan.png?v=1792135940" alt=""></span>Scan QR</div>
-      <div class="tab" data-go="messages"><span class="ico"><img class="t-msg" src="img/tab-msg.png?v=1792135940" alt=""></span>Messages</div>
+      <div class="tab" data-go="home"><span class="ico"><img class="t-home" src="img/tab-home-off.png?v=1794380657" alt=""></span>Home</div>
+      <div class="tab active" data-go="wallet"><span class="ico"><img class="t-wallet" src="img/tab-wallet-on.png?v=1794380657" alt=""></span>Wallet</div>
+      <div class="tab" data-go="showqr"><span class="ico"><img class="t-qr" src="img/tab-qr.png?v=1794380657" alt=""></span>Show QR</div>
+      <div class="tab" data-go="scanqr"><span class="ico"><img class="t-scan" src="img/tab-scan.png?v=1794380657" alt=""></span>Scan QR</div>
+      <div class="tab" data-go="messages"><span class="ico"><img class="t-msg" src="img/tab-msg.png?v=1794380657" alt=""></span>Messages</div>
     </nav>
   </div>
 
@@ -220,17 +220,17 @@
         <svg viewBox="0 0 22 38" aria-hidden="true"><polyline points="18,3 4,19 18,35" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
         Back
       </button>
-      <img class="lic-crest" src="img/qg-lockup-dark.png?v=1792135940" alt="Queensland Government">
+      <img class="lic-crest" src="img/qg-lockup-dark.png?v=1794380657" alt="Queensland Government">
     </header>
 
-    <img class="lic-watermark" src="img/watermark.png?v=1792135940" alt="" aria-hidden="true">
+    <img class="lic-watermark" src="img/watermark.png?v=1794380657" alt="" aria-hidden="true">
 
     <div class="lic-scroll">
     <div class="lic-headband"><h1 class="lic-heading">Driver Licence</h1></div>
     <main class="lic-body">
 
       <section class="lic-id">
-        <img class="lic-photo" src="img/photo.jpg?v=1792135940" alt="">
+        <img class="lic-photo" src="img/photo.jpg?v=1794380657" alt="">
         <div class="lic-fields">
           <p class="lic-name">OLIVIA MAY<br><b>GEORGE</b></p>
           <p class="lic-key">DoB</p>
@@ -255,7 +255,7 @@
         </div>
         <div class="lic-group">
           <div class="lic-row"><span class="lic-lbl"><u>Class</u><svg class="info" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="none" stroke="currentColor" stroke-width="2.6"/><circle cx="17" cy="10" r="2.2" fill="currentColor"/><path d="M17 15v11" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/></svg></span>
-            <span class="lic-v">(CA)&nbsp;Automatic Car<img class="lic-car" src="img/lic-car.png?v=1792135940" alt=""></span></div>
+            <span class="lic-v">(CA)&nbsp;Automatic Car<img class="lic-car" src="img/lic-car.png?v=1794380657" alt=""></span></div>
           <div class="lic-row"><span class="lic-lbl">Type</span><span class="lic-v">(P1) Provisional P1</span></div>
           <div class="lic-row"><span class="lic-lbl">Expiry</span><span class="lic-v">06 Aug 2031</span></div>
         </div>
@@ -287,11 +287,11 @@
 
     <nav class="tabbar">
       <svg class="notch" viewBox="0 0 320 40" aria-hidden="true"><path d="M0 37H59.5A155 155 0 0 1 260.5 37H320V40H0Z" fill="#fff"/><path d="M0 37H59.5A155 155 0 0 1 260.5 37H320" fill="none" stroke="#D5D5DA" stroke-width="2"/></svg>
-      <div class="tab active" data-go="home"><span class="ico"><img class="t-home" src="img/tab-home.png?v=1792135940" alt=""></span>Home</div>
-      <div class="tab" data-go="wallet"><span class="ico"><img class="t-wallet" src="img/tab-wallet.png?v=1792135940" alt=""></span>Wallet</div>
-      <div class="tab" data-go="showqr"><span class="ico"><img class="t-qr" src="img/tab-qr.png?v=1792135940" alt=""></span>Show QR</div>
-      <div class="tab" data-go="scanqr"><span class="ico"><img class="t-scan" src="img/tab-scan.png?v=1792135940" alt=""></span>Scan QR</div>
-      <div class="tab" data-go="messages"><span class="ico"><img class="t-msg" src="img/tab-msg.png?v=1792135940" alt=""></span>Messages</div>
+      <div class="tab active" data-go="home"><span class="ico"><img class="t-home" src="img/tab-home.png?v=1794380657" alt=""></span>Home</div>
+      <div class="tab" data-go="wallet"><span class="ico"><img class="t-wallet" src="img/tab-wallet.png?v=1794380657" alt=""></span>Wallet</div>
+      <div class="tab" data-go="showqr"><span class="ico"><img class="t-qr" src="img/tab-qr.png?v=1794380657" alt=""></span>Show QR</div>
+      <div class="tab" data-go="scanqr"><span class="ico"><img class="t-scan" src="img/tab-scan.png?v=1794380657" alt=""></span>Scan QR</div>
+      <div class="tab" data-go="messages"><span class="ico"><img class="t-msg" src="img/tab-msg.png?v=1794380657" alt=""></span>Messages</div>
     </nav>
   </div>
 
@@ -308,111 +308,170 @@
     <main class="sheet addcred-sheet">
       <h2 class="addcred-copy">Select an available credential to add to your wallet</h2>
       <div class="v-list">
-        <div class="v-row"><img class="v-tile" src="img/tile-qbcc.png?v=1792135940" alt=""><span class="v-name">QBCC Licences</span><svg class="v-add" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18.5" fill="none" stroke="#1B8A5A" stroke-width="3"/><path d="M20 11v18M11 20h18" stroke="#1B8A5A" stroke-width="3" stroke-linecap="round"/></svg></div>
+        <div class="v-row"><img class="v-tile" src="img/tile-qbcc.png?v=1794380657" alt=""><span class="v-name">QBCC Licences</span><svg class="v-add" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18.5" fill="none" stroke="#1B8A5A" stroke-width="3"/><path d="M20 11v18M11 20h18" stroke="#1B8A5A" stroke-width="3" stroke-linecap="round"/></svg></div>
+        <div class="v-row"><img class="v-tile" src="img/ben-seniors.png?v=1794380657" alt=""><span class="v-name">Seniors Card</span><svg class="v-add" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18.5" fill="none" stroke="#1B8A5A" stroke-width="3"/><path d="M20 11v18M11 20h18" stroke="#1B8A5A" stroke-width="3" stroke-linecap="round"/></svg></div>
+        <div class="v-row"><img class="v-tile" src="img/ben-seniors-biz.png?v=1794380657" alt=""><span class="v-name">Seniors Business Discount Card</span><svg class="v-add" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18.5" fill="none" stroke="#1B8A5A" stroke-width="3"/><path d="M20 11v18M11 20h18" stroke="#1B8A5A" stroke-width="3" stroke-linecap="round"/></svg></div>
+        <div class="v-row"><img class="v-tile" src="img/ben-carer.png?v=1794380657" alt=""><span class="v-name">Carer Business Discount Card</span><svg class="v-add" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18.5" fill="none" stroke="#1B8A5A" stroke-width="3"/><path d="M20 11v18M11 20h18" stroke="#1B8A5A" stroke-width="3" stroke-linecap="round"/></svg></div>
+        <div class="v-row"><img class="v-tile" src="img/ben-companion.png?v=1794380657" alt=""><span class="v-name">Companion Card</span><svg class="v-add" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18.5" fill="none" stroke="#1B8A5A" stroke-width="3"/><path d="M20 11v18M11 20h18" stroke="#1B8A5A" stroke-width="3" stroke-linecap="round"/></svg></div>
       </div>
     </main>
     <nav class="tabbar">
       <svg class="notch" viewBox="0 0 320 40" aria-hidden="true"><path d="M0 37H59.5A155 155 0 0 1 260.5 37H320V40H0Z" fill="#fff"/><path d="M0 37H59.5A155 155 0 0 1 260.5 37H320" fill="none" stroke="#D5D5DA" stroke-width="2"/></svg>
-      <div class="tab" data-go="home"><span class="ico"><img class="t-home" src="img/tab-home-off.png?v=1792135940" alt=""></span>Home</div>
-      <div class="tab active" data-go="wallet"><span class="ico"><img class="t-wallet" src="img/tab-wallet-on.png?v=1792135940" alt=""></span>Wallet</div>
-      <div class="tab" data-go="showqr"><span class="ico"><img class="t-qr" src="img/tab-qr.png?v=1792135940" alt=""></span>Show QR</div>
-      <div class="tab" data-go="scanqr"><span class="ico"><img class="t-scan" src="img/tab-scan.png?v=1792135940" alt=""></span>Scan QR</div>
-      <div class="tab" data-go="messages"><span class="ico"><img class="t-msg" src="img/tab-msg.png?v=1792135940" alt=""></span>Messages</div>
+      <div class="tab" data-go="home"><span class="ico"><img class="t-home" src="img/tab-home-off.png?v=1794380657" alt=""></span>Home</div>
+      <div class="tab active" data-go="wallet"><span class="ico"><img class="t-wallet" src="img/tab-wallet-on.png?v=1794380657" alt=""></span>Wallet</div>
+      <div class="tab" data-go="showqr"><span class="ico"><img class="t-qr" src="img/tab-qr.png?v=1794380657" alt=""></span>Show QR</div>
+      <div class="tab" data-go="scanqr"><span class="ico"><img class="t-scan" src="img/tab-scan.png?v=1794380657" alt=""></span>Scan QR</div>
+      <div class="tab" data-go="messages"><span class="ico"><img class="t-msg" src="img/tab-msg.png?v=1794380657" alt=""></span>Messages</div>
     </nav>
   </div>
 
   <div class="screen" id="showqr" hidden>
+    <div class="explain" id="showExplain">
+      <img class="ex-phones" src="img/qr-art-show.png?v=1794380657" alt="">
+      <h2>Show your QR code to be digitally verified</h2>
+      <p>Securely share your age, identity, or other information when asked by someone using a digital verifier.</p>
+      <p>Your app will show what information they are asking for.</p>
+      <p>You will always need to give consent before any of your details are shared.</p>
+      <button class="btn-primary" type="button" data-gotit="showqr">GOT IT</button>
+      <button class="btn-ghost" type="button">READ MORE</button>
+      <label class="ex-check"><input type="checkbox"><span class="box"></span>Don&rsquo;t show me again</label>
+    </div>
     <header class="topbar topbar--plain"></header>
     <main class="sheet plain-sheet">
       <svg class="spinner qr-spin" viewBox="0 0 122 122" role="status" aria-label="Generating QR code"><circle cx="61" cy="61" r="54"/></svg>
       <div class="qr-content" hidden>
         <h2 class="qr-title">Show this QR Code to share your details</h2>
-        <img class="qr-photo" src="img/photo.jpg?v=1792135940" alt="">
+        <img class="qr-photo" src="img/photo.jpg?v=1794380657" alt="">
         <img class="qr-code" alt="QR code">
+        <span class="qr-phone" aria-hidden="true"></span>
       </div>
     </main>
     <nav class="tabbar">
       <svg class="notch" viewBox="0 0 320 40" aria-hidden="true"><path d="M0 37H59.5A155 155 0 0 1 260.5 37H320V40H0Z" fill="#fff"/><path d="M0 37H59.5A155 155 0 0 1 260.5 37H320" fill="none" stroke="#D5D5DA" stroke-width="2"/></svg>
-      <div class="tab" data-go="home"><span class="ico"><img class="t-home" src="img/tab-home-off.png?v=1792135940" alt=""></span>Home</div>
-      <div class="tab" data-go="wallet"><span class="ico"><img class="t-wallet" src="img/tab-wallet.png?v=1792135940" alt=""></span>Wallet</div>
-      <div class="tab active" data-go="showqr"><span class="ico"><img class="t-qr" src="img/tab-qr-on.png?v=1792135940" alt=""></span>Show QR</div>
-      <div class="tab" data-go="scanqr"><span class="ico"><img class="t-scan" src="img/tab-scan.png?v=1792135940" alt=""></span>Scan QR</div>
-      <div class="tab" data-go="messages"><span class="ico"><img class="t-msg" src="img/tab-msg.png?v=1792135940" alt=""></span>Messages</div>
+      <div class="tab" data-go="home"><span class="ico"><img class="t-home" src="img/tab-home-off.png?v=1794380657" alt=""></span>Home</div>
+      <div class="tab" data-go="wallet"><span class="ico"><img class="t-wallet" src="img/tab-wallet.png?v=1794380657" alt=""></span>Wallet</div>
+      <div class="tab active" data-go="showqr"><span class="ico"><img class="t-qr" src="img/tab-qr-on.png?v=1794380657" alt=""></span>Show QR</div>
+      <div class="tab" data-go="scanqr"><span class="ico"><img class="t-scan" src="img/tab-scan.png?v=1794380657" alt=""></span>Scan QR</div>
+      <div class="tab" data-go="messages"><span class="ico"><img class="t-msg" src="img/tab-msg.png?v=1794380657" alt=""></span>Messages</div>
     </nav>
   </div>
 
   <!-- ══ Scan QR ══ -->
   <div class="screen" id="scanqr" hidden>
+    <div class="explain" id="scanExplain">
+      <img class="ex-phones" src="img/qr-art-scan.png?v=1794380657" alt="">
+      <h2>Scan a QR code to digitally verify a credential</h2>
+      <p>Securely check that someone is who they say they are, or they are authorised to perform certain work.</p>
+      <p>You choose the information you need, and they will give consent to share it with you.</p>
+      <button class="btn-primary" type="button" data-gotit="scanqr">GOT IT</button>
+      <button class="btn-ghost" type="button">READ MORE</button>
+    </div>
     <div class="scroll-wrap">
     <header class="topbar topbar--title"><h1 class="topbar-title">Scan QR</h1></header>
     <main class="sheet">
       <h2 class="verify-title">Select what you need to verify</h2>
       <h3 class="section-label">Favourites</h3>
       <div class="v-list"><div class="v-row v-row--plain">
-        <svg class="v-plus" viewBox="0 0 40 40" fill="none" stroke="#7B1040" stroke-width="2.6"><circle cx="20" cy="20" r="17"/><path d="M20 12v16M12 20h16" stroke-linecap="round"/></svg>
+        <svg class="v-plus" viewBox="0 0 40 40" fill="none" stroke="#0B63B8" stroke-width="2.6"><circle cx="20" cy="20" r="17"/><path d="M20 12v16M12 20h16" stroke-linecap="round"/></svg>
         <span class="v-name">Add Favourites</span></div></div>
       <h3 class="section-label">Identity and age</h3>
       <div class="v-list">
-        <div class="v-row"><img class="v-tile" src="img/tile-photo-id.png?v=1792135940" alt=""><span class="v-name">Photo Identification</span><img class="v-go" src="img/ic-chev.png?v=1792135940" alt=""></div>
-        <div class="v-row"><img class="v-tile" src="img/tile-age-18.png?v=1792135940" alt=""><span class="v-name">Someone is 18+</span><img class="v-go" src="img/ic-chev.png?v=1792135940" alt=""></div>
-        <div class="v-row"><img class="v-tile" src="img/tile-someones-id.png?v=1792135940" alt=""><span class="v-name">Someone&#39;s identity</span><img class="v-go" src="img/ic-chev.png?v=1792135940" alt=""></div>
+        <div class="v-row"><img class="v-tile" src="img/tile-photo-id.png?v=1794380657" alt=""><span class="v-name">Photo Identification</span><img class="v-go" src="img/ic-chev.png?v=1794380657" alt=""></div>
+        <div class="v-row"><img class="v-tile" src="img/tile-age-18.png?v=1794380657" alt=""><span class="v-name">Someone is 18+</span><img class="v-go" src="img/ic-chev.png?v=1794380657" alt=""></div>
+        <div class="v-row"><img class="v-tile" src="img/tile-someones-id.png?v=1794380657" alt=""><span class="v-name">Someone&#39;s identity</span><img class="v-go" src="img/ic-chev.png?v=1794380657" alt=""></div>
       </div>
       <h3 class="section-label">Transport</h3>
       <div class="v-list">
-        <div class="v-row"><img class="v-tile" src="img/tile-driver-licence.png?v=1792135940" alt=""><span class="v-name">Driver Licence</span><img class="v-go" src="img/ic-chev.png?v=1792135940" alt=""></div>
-        <div class="v-row"><img class="v-tile" src="img/tile-marine-licence.png?v=1792135940" alt=""><span class="v-name">Marine Licence</span><img class="v-go" src="img/ic-chev.png?v=1792135940" alt=""></div>
+        <div class="v-row"><img class="v-tile" src="img/tile-driver-licence.png?v=1794380657" alt=""><span class="v-name">Driver Licence</span><img class="v-go" src="img/ic-chev.png?v=1794380657" alt=""></div>
+        <div class="v-row"><img class="v-tile" src="img/tile-marine-licence.png?v=1794380657" alt=""><span class="v-name">Marine Licence</span><img class="v-go" src="img/ic-chev.png?v=1794380657" alt=""></div>
       </div>
+      <h3 class="section-label">Benefits and discounts</h3>
+      <div class="v-list">
+        <div class="v-row"><img class="v-tile" src="img/ben-carer.png?v=1794380657" alt=""><span class="v-name">Carer Business Discount Card</span><img class="v-go" src="img/ic-chev.png?v=1794380657" alt=""></div>
+        <div class="v-row"><img class="v-tile" src="img/ben-companion.png?v=1794380657" alt=""><span class="v-name">Companion Card</span><img class="v-go" src="img/ic-chev.png?v=1794380657" alt=""></div>
+        <div class="v-row"><img class="v-tile" src="img/ben-seniors-biz.png?v=1794380657" alt=""><span class="v-name">Seniors Business Discount Card</span><img class="v-go" src="img/ic-chev.png?v=1794380657" alt=""></div>
+        <div class="v-row"><img class="v-tile" src="img/ben-seniors.png?v=1794380657" alt=""><span class="v-name">Seniors Card</span><img class="v-go" src="img/ic-chev.png?v=1794380657" alt=""></div>
+      </div>
+
       <h3 class="section-label">Industry Authorities</h3>
       <div class="v-list">
-        <div class="v-row"><img class="v-tile" src="img/tile-dangerous-goods.png?v=1792135940" alt=""><span class="v-name">Dangerous Goods Driver Licence</span><img class="v-go" src="img/ic-chev.png?v=1792135940" alt=""></div>
-        <div class="v-row"><img class="v-tile" src="img/tile-driver-auth.png?v=1792135940" alt=""><span class="v-name">Driver Authorisation</span><img class="v-go" src="img/ic-chev.png?v=1792135940" alt=""></div>
-        <div class="v-row"><img class="v-tile" src="img/tile-driver-trainer.png?v=1792135940" alt=""><span class="v-name">Driver Trainer Accreditation</span><img class="v-go" src="img/ic-chev.png?v=1792135940" alt=""></div>
-        <div class="v-row"><img class="v-tile" src="img/tile-pilot-escort.png?v=1792135940" alt=""><span class="v-name">Pilot/Escort Accreditation</span><img class="v-go" src="img/ic-chev.png?v=1792135940" alt=""></div>
-        <div class="v-row"><img class="v-tile" src="img/tile-tow-assistant.png?v=1792135940" alt=""><span class="v-name">Tow Truck Assistant Accreditation</span><img class="v-go" src="img/ic-chev.png?v=1792135940" alt=""></div>
-        <div class="v-row"><img class="v-tile" src="img/tile-tow-driver.png?v=1792135940" alt=""><span class="v-name">Tow Truck Driver Accreditation</span><img class="v-go" src="img/ic-chev.png?v=1792135940" alt=""></div>
-        <div class="v-row"><img class="v-tile" src="img/tile-traffic-ctrl.png?v=1792135940" alt=""><span class="v-name">Traffic Controller Accreditation</span><img class="v-go" src="img/ic-chev.png?v=1792135940" alt=""></div>
+        <div class="v-row"><img class="v-tile" src="img/tile-dangerous-goods.png?v=1794380657" alt=""><span class="v-name">Dangerous Goods Driver Licence</span><img class="v-go" src="img/ic-chev.png?v=1794380657" alt=""></div>
+        <div class="v-row"><img class="v-tile" src="img/tile-driver-auth.png?v=1794380657" alt=""><span class="v-name">Driver Authorisation</span><img class="v-go" src="img/ic-chev.png?v=1794380657" alt=""></div>
+        <div class="v-row"><img class="v-tile" src="img/tile-driver-trainer.png?v=1794380657" alt=""><span class="v-name">Driver Trainer Accreditation</span><img class="v-go" src="img/ic-chev.png?v=1794380657" alt=""></div>
+        <div class="v-row"><img class="v-tile" src="img/tile-pilot-escort.png?v=1794380657" alt=""><span class="v-name">Pilot/Escort Accreditation</span><img class="v-go" src="img/ic-chev.png?v=1794380657" alt=""></div>
+        <div class="v-row"><img class="v-tile" src="img/tile-tow-assistant.png?v=1794380657" alt=""><span class="v-name">Tow Truck Assistant Accreditation</span><img class="v-go" src="img/ic-chev.png?v=1794380657" alt=""></div>
+        <div class="v-row"><img class="v-tile" src="img/tile-tow-driver.png?v=1794380657" alt=""><span class="v-name">Tow Truck Driver Accreditation</span><img class="v-go" src="img/ic-chev.png?v=1794380657" alt=""></div>
+        <div class="v-row"><img class="v-tile" src="img/tile-traffic-ctrl.png?v=1794380657" alt=""><span class="v-name">Traffic Controller Accreditation</span><img class="v-go" src="img/ic-chev.png?v=1794380657" alt=""></div>
       </div>
       <h3 class="section-label">Construction</h3>
       <div class="v-list">
-        <div class="v-row"><img class="v-tile" src="img/qbcc-cert.png?v=1792135940" alt=""><span class="v-name">QBCC Building Certifier Licence</span><img class="v-go" src="img/ic-chev.png?v=1792135940" alt=""></div>
-        <div class="v-row"><img class="v-tile" src="img/qbcc-contractor.png?v=1792135940" alt=""><span class="v-name">QBCC Contractor Licence</span><img class="v-go" src="img/ic-chev.png?v=1792135940" alt=""></div>
-        <div class="v-row"><img class="v-tile" src="img/qbcc-fire.png?v=1792135940" alt=""><span class="v-name">QBCC Fire Occupational Licence</span><img class="v-go" src="img/ic-chev.png?v=1792135940" alt=""></div>
-        <div class="v-row"><img class="v-tile" src="img/qbcc-mech.png?v=1792135940" alt=""><span class="v-name">QBCC Mechanical Services Occupational Licence</span><img class="v-go" src="img/ic-chev.png?v=1792135940" alt=""></div>
-        <div class="v-row"><img class="v-tile" src="img/qbcc-nominee.png?v=1792135940" alt=""><span class="v-name">QBCC Nominee Supervisor Licence</span><img class="v-go" src="img/ic-chev.png?v=1792135940" alt=""></div>
-        <div class="v-row"><img class="v-tile" src="img/qbcc-plumb-occ.png?v=1792135940" alt=""><span class="v-name">QBCC Plumber and Drainer Occupational Licence</span><img class="v-go" src="img/ic-chev.png?v=1792135940" alt=""></div>
-        <div class="v-row"><img class="v-tile" src="img/qbcc-plumb-prov.png?v=1792135940" alt=""><span class="v-name">QBCC Plumber and Drainer Provisional Licence</span><img class="v-go" src="img/ic-chev.png?v=1792135940" alt=""></div>
-        <div class="v-row"><img class="v-tile" src="img/qbcc-pool.png?v=1792135940" alt=""><span class="v-name">QBCC Pool Safety Inspector Licence</span><img class="v-go" src="img/ic-chev.png?v=1792135940" alt=""></div>
-        <div class="v-row"><img class="v-tile" src="img/qbcc-site.png?v=1792135940" alt=""><span class="v-name">QBCC Site Supervisor Licence</span><img class="v-go" src="img/ic-chev.png?v=1792135940" alt=""></div>
+        <div class="v-row"><img class="v-tile" src="img/qbcc-cert.png?v=1794380657" alt=""><span class="v-name">QBCC Building Certifier Licence</span><img class="v-go" src="img/ic-chev.png?v=1794380657" alt=""></div>
+        <div class="v-row"><img class="v-tile" src="img/qbcc-contractor.png?v=1794380657" alt=""><span class="v-name">QBCC Contractor Licence</span><img class="v-go" src="img/ic-chev.png?v=1794380657" alt=""></div>
+        <div class="v-row"><img class="v-tile" src="img/qbcc-fire.png?v=1794380657" alt=""><span class="v-name">QBCC Fire Occupational Licence</span><img class="v-go" src="img/ic-chev.png?v=1794380657" alt=""></div>
+        <div class="v-row"><img class="v-tile" src="img/qbcc-mech.png?v=1794380657" alt=""><span class="v-name">QBCC Mechanical Services Occupational Licence</span><img class="v-go" src="img/ic-chev.png?v=1794380657" alt=""></div>
+        <div class="v-row"><img class="v-tile" src="img/qbcc-nominee.png?v=1794380657" alt=""><span class="v-name">QBCC Nominee Supervisor Licence</span><img class="v-go" src="img/ic-chev.png?v=1794380657" alt=""></div>
+        <div class="v-row"><img class="v-tile" src="img/qbcc-plumb-occ.png?v=1794380657" alt=""><span class="v-name">QBCC Plumber and Drainer Occupational Licence</span><img class="v-go" src="img/ic-chev.png?v=1794380657" alt=""></div>
+        <div class="v-row"><img class="v-tile" src="img/qbcc-plumb-prov.png?v=1794380657" alt=""><span class="v-name">QBCC Plumber and Drainer Provisional Licence</span><img class="v-go" src="img/ic-chev.png?v=1794380657" alt=""></div>
+        <div class="v-row"><img class="v-tile" src="img/qbcc-pool.png?v=1794380657" alt=""><span class="v-name">QBCC Pool Safety Inspector Licence</span><img class="v-go" src="img/ic-chev.png?v=1794380657" alt=""></div>
+        <div class="v-row"><img class="v-tile" src="img/qbcc-site.png?v=1794380657" alt=""><span class="v-name">QBCC Site Supervisor Licence</span><img class="v-go" src="img/ic-chev.png?v=1794380657" alt=""></div>
       </div>
+
     </main>
     </div>
 
     <nav class="tabbar">
       <svg class="notch" viewBox="0 0 320 40" aria-hidden="true"><path d="M0 37H59.5A155 155 0 0 1 260.5 37H320V40H0Z" fill="#fff"/><path d="M0 37H59.5A155 155 0 0 1 260.5 37H320" fill="none" stroke="#D5D5DA" stroke-width="2"/></svg>
-      <div class="tab" data-go="home"><span class="ico"><img class="t-home" src="img/tab-home-off.png?v=1792135940" alt=""></span>Home</div>
-      <div class="tab" data-go="wallet"><span class="ico"><img class="t-wallet" src="img/tab-wallet.png?v=1792135940" alt=""></span>Wallet</div>
-      <div class="tab" data-go="showqr"><span class="ico"><img class="t-qr" src="img/tab-qr.png?v=1792135940" alt=""></span>Show QR</div>
-      <div class="tab active" data-go="scanqr"><span class="ico"><img class="t-scan" src="img/tab-scan-on.png?v=1792135940" alt=""></span>Scan QR</div>
-      <div class="tab" data-go="messages"><span class="ico"><img class="t-msg" src="img/tab-msg.png?v=1792135940" alt=""></span>Messages</div>
+      <div class="tab" data-go="home"><span class="ico"><img class="t-home" src="img/tab-home-off.png?v=1794380657" alt=""></span>Home</div>
+      <div class="tab" data-go="wallet"><span class="ico"><img class="t-wallet" src="img/tab-wallet.png?v=1794380657" alt=""></span>Wallet</div>
+      <div class="tab" data-go="showqr"><span class="ico"><img class="t-qr" src="img/tab-qr.png?v=1794380657" alt=""></span>Show QR</div>
+      <div class="tab active" data-go="scanqr"><span class="ico"><img class="t-scan" src="img/tab-scan-on.png?v=1794380657" alt=""></span>Scan QR</div>
+      <div class="tab" data-go="messages"><span class="ico"><img class="t-msg" src="img/tab-msg.png?v=1794380657" alt=""></span>Messages</div>
     </nav>
   </div>
 
   <!-- ══ Messages ══ -->
   <div class="screen" id="messages" hidden>
     <header class="topbar topbar--title"><h1 class="topbar-title">Messages</h1></header>
-    <main class="sheet plain-sheet">
-      <h2 class="inbox-title">Your inbox is empty</h2>
-      <img class="inbox-art" src="img/inbox-art.png?v=1792135940" alt="">
-      <p class="inbox-sub">You don&#39;t have any messages.</p>
+    <main class="sheet msg-sheet">
+      <div class="msg-row">
+        <div class="msg-main">
+          <h3 class="msg-title">Introducing the new Service Queensland a&hellip;</h3>
+          <p class="msg-from">Queensland Government</p>
+        </div>
+        <span class="msg-date">09 Nov 2026</span>
+      </div>
     </main>
     <nav class="tabbar">
       <svg class="notch" viewBox="0 0 320 40" aria-hidden="true"><path d="M0 37H59.5A155 155 0 0 1 260.5 37H320V40H0Z" fill="#fff"/><path d="M0 37H59.5A155 155 0 0 1 260.5 37H320" fill="none" stroke="#D5D5DA" stroke-width="2"/></svg>
-      <div class="tab" data-go="home"><span class="ico"><img class="t-home" src="img/tab-home-off.png?v=1792135940" alt=""></span>Home</div>
-      <div class="tab" data-go="wallet"><span class="ico"><img class="t-wallet" src="img/tab-wallet.png?v=1792135940" alt=""></span>Wallet</div>
-      <div class="tab" data-go="showqr"><span class="ico"><img class="t-qr" src="img/tab-qr.png?v=1792135940" alt=""></span>Show QR</div>
-      <div class="tab" data-go="scanqr"><span class="ico"><img class="t-scan" src="img/tab-scan.png?v=1792135940" alt=""></span>Scan QR</div>
-      <div class="tab active" data-go="messages"><span class="ico"><img class="t-msg" src="img/tab-msg-on.png?v=1792135940" alt=""></span>Messages</div>
+      <div class="tab" data-go="home"><span class="ico"><img class="t-home" src="img/tab-home-off.png?v=1794380657" alt=""></span>Home</div>
+      <div class="tab" data-go="wallet"><span class="ico"><img class="t-wallet" src="img/tab-wallet.png?v=1794380657" alt=""></span>Wallet</div>
+      <div class="tab" data-go="showqr"><span class="ico"><img class="t-qr" src="img/tab-qr.png?v=1794380657" alt=""></span>Show QR</div>
+      <div class="tab" data-go="scanqr"><span class="ico"><img class="t-scan" src="img/tab-scan.png?v=1794380657" alt=""></span>Scan QR</div>
+      <div class="tab active" data-go="messages"><span class="ico"><img class="t-msg" src="img/tab-msg-on.png?v=1794380657" alt=""></span>Messages</div>
     </nav>
+  </div>
+
+  <!-- ══ Message detail ══ -->
+  <div class="screen" id="msgdetail" hidden>
+    <header class="topbar topbar--msg">
+      <span class="msg-back" data-back-msg>
+        <svg viewBox="0 0 24 40" aria-hidden="true"><path d="M19 4L5 20l14 16" fill="none" stroke="#fff" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Back
+      </span>
+      <span class="msg-delete">Delete</span>
+    </header>
+    <main class="sheet msgd-sheet">
+      <h1 class="msgd-title">Introducing the new Service Queensland app</h1>
+      <p class="msgd-from">Queensland Government</p>
+      <p class="msgd-when">9 Nov 2026 9:00 AM</p>
+      <hr class="msgd-rule">
+      <p class="msgd-p">Hi</p>
+      <p class="msgd-p">The Service Queensland app is here and has now replaced the Digital Licence app.</p>
+      <p class="msgd-p">Your existing digital licences and cards are now stored and available in the new Service Queensland app. You can also access a range of online services from the Service Queensland app - with more cards and services on the way!</p>
+      <p class="msgd-p">Service Queensland - a new, more connected way to access Queensland Government services online, over the phone, and in person.</p>
+      <p class="msgd-p">Visit <a class="msgd-link" href="#" onclick="return false">Service Queensland</a> to learn more.</p>
+      <p class="msgd-p">Queensland Government</p>
+    </main>
   </div>
 
   <!-- ══ Settings ══ -->
@@ -426,47 +485,51 @@
       <h1 class="topbar-title">Settings</h1>
     </header>
     <main class="sheet">
-      <h3 class="section-label set-label">App</h3>
+      <h3 class="set-heading">App</h3>
       <div class="set-list">
-        <div class="set-row"><img class="set-ic set-fingerprint" src="img/set-fingerprint.png?v=1792135940" alt=""><span class="set-name">Change PIN</span><img class="v-go" src="img/ic-chev.png?v=1792135940" alt=""></div>
-        <div class="set-row"><img class="set-ic set-faceid" src="img/set-faceid.png?v=1792135940" alt=""><span class="set-name">Enable Face ID</span><span class="toggle" role="switch" aria-checked="false"><span></span></span></div>
-        <div class="set-row"><img class="set-ic set-clock" src="img/set-clock.png?v=1792135940" alt=""><span class="set-name">Auto lock time</span><span class="set-val">3 minutes</span><img class="v-go" src="img/ic-chev.png?v=1792135940" alt=""></div>
-      </div>
-      <div class="set-list">
-        <div class="set-row"><img class="set-ic set-cursor" src="img/set-cursor.png?v=1792135940" alt=""><span class="set-name">Access TMR Online Services</span><img class="v-go set-ext" src="img/ic-ext.png?v=1792135940" alt=""></div>
-      </div>
-      <div class="set-list">
-        <div class="set-row"><img class="set-ic set-globe" src="img/set-globe.png?v=1792135940" alt=""><span class="set-name">International driving classes</span><img class="v-go" src="img/ic-chev.png?v=1792135940" alt=""></div>
+        <div class="set-row"><img class="set-ic set-fingerprint" src="img/set-fingerprint.png?v=1794380657" alt=""><span class="set-name">Change PIN</span><img class="v-go" src="img/ic-chev.png?v=1794380657" alt=""></div>
+        <div class="set-row"><img class="set-ic set-faceid" src="img/set-faceid.png?v=1794380657" alt=""><span class="set-name">Enable Face ID</span><span class="toggle" role="switch" aria-checked="false"><span></span></span></div>
+        <div class="set-row"><img class="set-ic set-clock" src="img/set-clock.png?v=1794380657" alt=""><span class="set-name">Auto lock time</span><span class="set-val">3 minutes</span><img class="v-go" src="img/ic-chev.png?v=1794380657" alt=""></div>
+        <div class="set-row"><img class="set-ic set-dark" src="img/set-dark.png?v=1794380657" alt=""><span class="set-name">Dark mode</span><img class="v-go" src="img/ic-chev.png?v=1794380657" alt=""></div>
+        <div class="set-row"><img class="set-ic set-logout" src="img/set-logout.png?v=1794380657" alt=""><span class="set-name">Lock app</span></div>
       </div>
       <div class="set-list">
-        <div class="set-row"><img class="set-ic set-doc" src="img/set-doc.png?v=1792135940" alt=""><span class="set-name">Terms &amp; Conditions</span><img class="v-go" src="img/ic-chev.png?v=1792135940" alt=""></div>
+        <div class="set-row"><img class="set-ic set-doc" src="img/set-doc.png?v=1794380657" alt=""><span class="set-name">Terms &amp; Conditions</span><img class="v-go" src="img/ic-chev.png?v=1794380657" alt=""></div>
       </div>
       <div class="set-list">
-        <div class="set-row"><img class="set-ic set-logout" src="img/set-logout.png?v=1792135940" alt=""><span class="set-name">Log out</span></div>
+        <div class="set-row"><img class="set-ic set-fingerprint" src="img/set-fingerprint.png?v=1794380657" alt=""><span class="set-name">Guides</span><img class="v-go" src="img/ic-chev.png?v=1794380657" alt=""></div>
+      </div>
+
+      <h3 class="set-heading">Driver Licence</h3>
+      <div class="set-list">
+        <div class="set-row"><img class="set-ic set-globe" src="img/set-globe.png?v=1794380657" alt=""><span class="set-name">International driving classes</span><img class="v-go" src="img/ic-chev.png?v=1794380657" alt=""></div>
+      </div>
+
+      <h3 class="set-heading">Queensland Digital Identity (QDI)</h3>
+      <div class="set-list">
+        <div class="set-row set-row--tall"><img class="set-ic set-delete" src="img/set-delete.png?v=1794380657" alt=""><span class="set-name">Request to delete my Queensland Digital Identity</span><img class="v-go set-ext" src="img/ic-ext.png?v=1794380657" alt=""></div>
       </div>
       <div class="set-list">
-        <div class="set-row"><img class="set-ic set-reset" src="img/set-reset.png?v=1792135940" alt=""><span class="set-name">Securely reset Digital Licence</span></div>
+        <div class="set-row set-row--tall"><img class="set-ic set-reset" src="img/set-reset.png?v=1794380657" alt=""><span class="set-name">Log out and securely reset Service Queensland app</span></div>
       </div>
-      <p class="set-note">Resetting your app will restore it to its original state as when first downloaded. You will need to login with your Queensland Digital Identity again to access your Digital Licence.</p>
-      <h3 class="set-heading">Queensland Digital Identity</h3>
-      <div class="set-list set-list--last">
-        <div class="set-row set-row--tall"><img class="set-ic set-delete" src="img/set-delete.png?v=1792135940" alt=""><span class="set-name">Request to delete my Queensland Digital Identity</span><img class="v-go set-ext" src="img/ic-ext.png?v=1792135940" alt=""></div>
-      </div>
+
+      <p class="set-note">Resetting your app will restore it to its original state as when first downloaded. You will need to login with your Queensland Digital Identity again to access your credentials and extended features of the app.</p>
+
       <button class="feedback-btn" type="button">GIVE US YOUR FEEDBACK</button>
-      <img class="set-logo" src="img/qg-lockup-dark.png?v=1792135940" alt="Queensland Government">
-      <p class="set-copy">Queensland Digital Licence</p>
+      <img class="set-logo" src="img/sq-footer-dark.png?v=1794380657" alt="Delivering for Queensland — Queensland Government">
+      <p class="set-copy">Service Queensland</p>
       <p class="set-copy set-copy2">Copyright&#169; State of Queensland 2026</p>
-      <p class="set-version">Version No. 3.24.0 (12323)</p>
+      <p class="set-copy set-copy2">Version No. 1.1.1 (12890)</p>
     </main>
     </div>
 
     <nav class="tabbar">
       <svg class="notch" viewBox="0 0 320 40" aria-hidden="true"><path d="M0 37H59.5A155 155 0 0 1 260.5 37H320V40H0Z" fill="#fff"/><path d="M0 37H59.5A155 155 0 0 1 260.5 37H320" fill="none" stroke="#D5D5DA" stroke-width="2"/></svg>
-      <div class="tab active" data-go="home"><span class="ico"><img class="t-home" src="img/tab-home.png?v=1792135940" alt=""></span>Home</div>
-      <div class="tab" data-go="wallet"><span class="ico"><img class="t-wallet" src="img/tab-wallet.png?v=1792135940" alt=""></span>Wallet</div>
-      <div class="tab" data-go="showqr"><span class="ico"><img class="t-qr" src="img/tab-qr.png?v=1792135940" alt=""></span>Show QR</div>
-      <div class="tab" data-go="scanqr"><span class="ico"><img class="t-scan" src="img/tab-scan.png?v=1792135940" alt=""></span>Scan QR</div>
-      <div class="tab" data-go="messages"><span class="ico"><img class="t-msg" src="img/tab-msg.png?v=1792135940" alt=""></span>Messages</div>
+      <div class="tab active" data-go="home"><span class="ico"><img class="t-home" src="img/tab-home.png?v=1794380657" alt=""></span>Home</div>
+      <div class="tab" data-go="wallet"><span class="ico"><img class="t-wallet" src="img/tab-wallet.png?v=1794380657" alt=""></span>Wallet</div>
+      <div class="tab" data-go="showqr"><span class="ico"><img class="t-qr" src="img/tab-qr.png?v=1794380657" alt=""></span>Show QR</div>
+      <div class="tab" data-go="scanqr"><span class="ico"><img class="t-scan" src="img/tab-scan.png?v=1794380657" alt=""></span>Scan QR</div>
+      <div class="tab" data-go="messages"><span class="ico"><img class="t-msg" src="img/tab-msg.png?v=1794380657" alt=""></span>Messages</div>
     </nav>
   </div>
 
@@ -474,6 +537,6 @@
 
 
 
-<script src="app.js?v=1792135940"></script>
+<script src="app.js?v=1794380657"></script>
 </body>
 </html>

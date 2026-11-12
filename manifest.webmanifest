@@ -1,11 +1,11 @@
 {
-  "name": "Digital Licence",
-  "short_name": "Digital Licence",
+  "name": "Service Qld",
+  "short_name": "Service Qld",
   "start_url": ".",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#0C3A5E",
-  "theme_color": "#691628",
+  "background_color": "#0857AD",
+  "theme_color": "#0857AD",
   "icons": [
     {
       "src": "img/app-icon.png",

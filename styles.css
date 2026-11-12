@@ -1,24 +1,34 @@
 /* ============================================================
-   QLD Digital Licence
-   Layout measured from 1284 x 2778 screenshots (iPhone @3x).
-   Timings measured from the screen recording (43 fps).
+   Service Queensland
+   Layout measured from 1290 x 2796 screenshots (iPhone @3x).
+   Timings measured from the 09-11-2026 screen recording (59.67 fps).
+
+   The app was rebranded from "Digital Licence" (maroon) to
+   "Service Queensland" (blue) — the licence detail screen keeps
+   its old geometry but wears an amber header.
    ============================================================ */
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --maroon:      #7A1028;
-  --maroon-deep: #691628;
-  --sheet:       #E1E0E6;
+  /* brand — sampled across the header band of the new recording */
+  --blue:        #0857AD;          /* gradient start, top-left  */
+  --blue-light:  #0B85D4;          /* gradient end,   top-right */
+  --blue-ink:    #0B63B8;          /* links, active tab, icons  */
+  --amber:       #E8A457;          /* licence header start      */
+  --amber-light: #F5D17D;          /* licence header end        */
+
+  --sheet:       #E2E1E8;
   --card:        #FFFFFF;
   --ink:         #000000;
   --ink-soft:    #505050;
-  --pin-ink:     #661B53;
-  --pin-dot:     #661B53;
-  --success:     #198051;
-  --pad-grey:    #F7F5F6;
+  --pin-ink:     #3273D1;          /* measured on f0235 */
+  --pin-dot:     #3273D1;
+  --success:     #3E956F;
+  --pad-grey:    #F7F7F8;
   --hair:        #DDDDE0;
   --tab-off:     #505050;
+  --lic-body:    #F8F8F8;
 }
 
 body {
@@ -27,16 +37,16 @@ body {
   overflow: hidden;
   display: flex;
   justify-content: center;
-  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Fira Sans', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
 }
 
 #app {
   position: relative;
-  width: min(100vw, calc(100vh * 1284 / 2778));
+  width: min(100vw, calc(100vh * 1290 / 2796));
   height: 100vh;
   overflow: hidden;
-  --u: calc(min(100vw, 100vh * 1284 / 2778) / 1284);
-  --v: calc(100vh / 2778);
+  --u: calc(min(100vw, 100vh * 1290 / 2796) / 1290);
+  --v: calc(100vh / 2796);
 }
 
 /* Screens cut hard between states, exactly as the app does */
@@ -44,8 +54,18 @@ body {
 .screen[hidden] { display: none !important; }
 
 /* ───────────────── Splash ───────────────── */
-#splash { z-index: 40; background: #0C3A5E; }
-#splash img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+#splash {
+  /* Sampled down the left edge of f0118: flat navy to a third of the way down,
+     lightening to #2A5AB6 at three quarters, then back to #0750B1 at the foot. */
+  z-index: 40;
+  background: linear-gradient(180deg,
+      #142F8D 0%, #142F8D 32%, #264DAA 61%, #2A5AB6 75%, #0750B1 100%);
+  display: flex; flex-direction: column; align-items: center;
+}
+.splash-logo { position: absolute; left: 50%; transform: translateX(-50%);
+               top: calc(997*var(--v)); width: calc(893*var(--u)); height: auto; display: block; }
+.splash-foot { position: absolute; left: 50%; transform: translateX(-50%);
+               top: calc(2392*var(--v)); width: calc(874*var(--u)); height: auto; display: block; }
 
 /* ───────────────── PIN ───────────────── */
 #pin { z-index: 30; background: #fff; display: flex; flex-direction: column; }
@@ -82,7 +102,7 @@ body {
 .pin-dots.verified .pin-cell.filled::after { background: var(--success); }
 
 .pin-reset { font-size: calc(42*var(--u)); color: var(--ink-soft); margin-top: calc(131 * var(--v)); }
-.pin-reset b { color: #5D1928; font-weight: 700;
+.pin-reset b { color: var(--pin-ink); font-weight: 700;
                letter-spacing: calc(2*var(--u)); margin-left: calc(24*var(--u)); }
 
 .keypad {
@@ -95,16 +115,16 @@ body {
 .key {
   height: calc(177 * var(--v));
   display: flex; align-items: center; justify-content: center;
-  font-size: calc(127*var(--u)); font-weight: 400; color: var(--maroon-deep);
+  font-size: calc(127*var(--u)); font-weight: 400; color: var(--pin-ink);
   cursor: pointer; user-select: none; -webkit-tap-highlight-color: transparent;
   border-radius: calc(20*var(--u));
   transition: background .06s ease, color .2s ease;
 }
 .key { position: relative; overflow: hidden; touch-action: manipulation; }
-.key.pressed { background: rgba(107,16,48,.10); }
+.key.pressed { background: rgba(50,115,209,.10); }
 .key .ripple {
   position: absolute; border-radius: 50%;
-  background: rgba(107,16,48,.22);
+  background: rgba(50,115,209,.22);
   pointer-events: none;
   transform: translate(-50%,-50%) scale(0);
   animation: key-ripple .45s cubic-bezier(.2,.6,.35,1) forwards;
@@ -121,12 +141,14 @@ body {
 .topbar {
   flex-shrink: 0;
   background:
-    linear-gradient(158deg, rgb(105,22,40) 0 41.5%, rgba(105,22,40,0) 42.7%),
-    linear-gradient(90deg, rgb(102,23,38) 0%, rgb(151,36,62) 100%);
+    linear-gradient(158deg, rgba(255,255,255,.07) 0 41.5%, rgba(255,255,255,0) 42.7%),
+    linear-gradient(100deg, rgb(8,87,173) 0%, rgb(11,133,212) 100%);
   display: flex; align-items: center; justify-content: space-between;
   padding: calc(169*var(--v)) calc(94*var(--u)) calc(57*var(--v)) calc(56*var(--u));
 }
 .topbar .brand { width: calc(394*var(--u)); height: calc(134*var(--u)); display: block; flex: none; }
+/* Service Queensland lockup: measured at x 56..524, y 178..304 */
+.topbar .sq-logo { width: calc(468*var(--u)); height: calc(126*var(--u)); display: block; flex: none; }
 .topbar .cog   { width: calc(76*var(--u));  height: calc(80*var(--u)); display: block; flex: none;
                  position: relative; top: calc(-8*var(--v)); }
 
@@ -155,10 +177,11 @@ body {
 .t-qr     { height: calc(93*var(--u)); margin-bottom: calc(2*var(--u)); }
 .t-scan   { height: calc(62*var(--u)); margin-bottom: calc(1*var(--u)); }
 .t-msg    { height: calc(56*var(--u)); margin-bottom: calc(4*var(--u)); }
-.tab.active { color: var(--maroon-deep); }
+.tab.active { color: var(--blue-ink); }
 
 /* ───────────────── Loading ───────────────── */
-#loading { z-index: 20; background: #5A0A23; display: flex; flex-direction: column; }
+#loading { z-index: 20; background: linear-gradient(100deg, #0857AD 0%, #0B85D4 100%);
+           display: flex; flex-direction: column; }
 
 .loading-body {
   flex: 1; background: var(--sheet);
@@ -171,17 +194,18 @@ body {
   padding: 0 calc(70*var(--u));
 }
 .spinner {
-  width: calc(122*var(--u)); height: calc(122*var(--u));
-  margin-top: calc(189 * var(--v));
-  animation: spinner-rotate 2s linear infinite;
+  width: calc(119*var(--u)); height: calc(119*var(--u));
+  margin-top: calc(177 * var(--v));
+  animation: spinner-rotate .618s linear infinite;
 }
 .spinner circle {
   fill: none;
-  stroke: #620F29;
-  stroke-width: 7;
+  stroke: #0857AD;
+  stroke-width: 12.6;                 /* 12 px across a 119-wide box */
   stroke-linecap: round;
   transform-origin: 50% 50%;
-  animation: spinner-dash 1.9s ease-in-out infinite;
+  /* the arc no longer breathes — it is a constant 248-degree sweep */
+  stroke-dasharray: 234 106;
 }
 @keyframes spinner-rotate { to { transform: rotate(360deg); } }
 @keyframes spinner-dash {
@@ -191,7 +215,7 @@ body {
 }
 
 /* ───────────────── Home ───────────────── */
-#home { z-index: 10; background: linear-gradient(90deg, #691628 0%, #94223C 100%); display: flex; flex-direction: column; }
+#home { z-index: 10; background: linear-gradient(100deg, #0857AD 0%, #0B85D4 100%); display: flex; flex-direction: column; }
 
 .sheet {
   flex: 1; background: var(--sheet);
@@ -221,10 +245,21 @@ body {
   height: calc(168*var(--u)); cursor: pointer; margin-bottom: calc(97 * var(--v));
 }
 .licence .thumb { width: calc(166*var(--u)); height: 100%; object-fit: cover; display: block; flex-shrink: 0; }
+.licence .dl-tile { width: calc(168*var(--u)); height: 100%; flex: none; background: var(--amber);
+                    display: flex; align-items: center; justify-content: center; }
+.licence .dl-tile .dl-car { width: calc(104*var(--u)); height: auto; display: block; }
+.licence .go    { color: var(--ink); }
+.licence > .go  { width: calc(24*var(--u)); height: calc(40*var(--u)); flex: none;
+                  margin-right: calc(35*var(--u)); align-self: center; }
 .licence .name  { flex: 1; display: flex; align-items: center; padding-left: calc(32*var(--u));
                   font-size: calc(61*var(--u)); color: var(--ink); }
 .licence .go    { display: flex; align-items: center; padding-right: calc(35*var(--u)); }
 .licence .go img{ width: calc(26*var(--u)); height: calc(40*var(--u)); }
+/* the new row ends in an inline <svg class="go">, so give it real dimensions
+   (the rule above only sizes a child <img>, which left it collapsed) */
+.licence > svg.go { width: calc(26*var(--u)); height: calc(40*var(--u)); flex: none;
+                    align-self: center; margin-right: calc(35*var(--u));
+                    padding-right: 0; color: var(--ink); }
 
 .section-label { font-size: calc(55*var(--u)); font-weight: 400; color: var(--ink-soft);
                  margin-bottom: calc(24 * var(--v)); }
@@ -241,6 +276,35 @@ body {
 .service .label { flex: 1; font-size: calc(55*var(--u)); color: var(--ink);
                   padding-left: calc(61*var(--u)); }
 .service .out   { width: calc(42*var(--u)); height: calc(42*var(--u)); flex-shrink: 0; }
+/* ── rows in the new Services / Your Services lists ── */
+.srow { background: var(--card); height: calc(144*var(--u)); display: flex; align-items: center;
+        padding: 0 calc(28*var(--u)) 0 calc(26*var(--u)); cursor: pointer; }
+.services .srow:first-child { border-radius: calc(20*var(--u)) calc(20*var(--u)) 0 0; }
+.services .srow:last-child  { border-radius: 0 0 calc(20*var(--u)) calc(20*var(--u)); }
+.services .srow:only-child  { border-radius: calc(20*var(--u)); }
+.srow .sic { width: calc(68*var(--u)); flex: none; display: flex; align-items: center;
+             justify-content: center; color: var(--blue-ink); }
+.srow .sic svg { width: calc(62*var(--u)); height: calc(62*var(--u)); display: block; }
+.srow .slabel  { flex: 1; font-size: calc(55*var(--u)); color: var(--ink);
+                 padding-left: calc(61*var(--u)); }
+.srow .out  { width: calc(42*var(--u)); height: calc(42*var(--u)); flex: none; color: var(--ink); }
+.srow .go   { width: calc(24*var(--u)); height: calc(40*var(--u)); flex: none; color: var(--ink); }
+
+/* ── "Explore the app" card ── */
+.explore { position: relative; display: flex; background: var(--card); overflow: hidden;
+           border-radius: calc(20*var(--u)); height: calc(348*var(--u));
+           margin-bottom: calc(97*var(--v)); }
+.explore .ex-art  { width: calc(380*var(--u)); height: 100%; object-fit: cover; flex: none; display: block; }
+.explore .ex-body { flex: 1; padding: calc(34*var(--u)) calc(96*var(--u)) calc(30*var(--u)) calc(36*var(--u)); }
+.explore .ex-body h3 { font-size: calc(62*var(--u)); font-weight: 400; color: var(--ink);
+                       margin-bottom: calc(14*var(--u)); }
+.explore .ex-body p  { font-size: calc(50*var(--u)); font-weight: 400; color: var(--ink);
+                       line-height: 1.26; }
+.explore .ex-close { position: absolute; top: calc(22*var(--u)); right: calc(22*var(--u));
+                     width: calc(52*var(--u)); height: calc(52*var(--u)); padding: 0;
+                     background: none; border: 0; color: var(--ink); cursor: pointer; }
+.explore .ex-close svg { width: 100%; height: 100%; display: block; }
+
 .ic-qld    { width: calc(76*var(--u)); height: calc(49*var(--u)); }
 .ic-dollar { width: calc(38*var(--u)); height: calc(62*var(--u)); }
 .ic-gavel  { width: calc(62*var(--u)); height: calc(62*var(--u)); }
@@ -283,7 +347,7 @@ body {
 }
 
 /* ───────────────── Wallet ───────────────── */
-#wallet { z-index: 15; background: linear-gradient(90deg, #691628 0%, #94223C 100%); display: flex; flex-direction: column; }
+#wallet { z-index: 15; background: linear-gradient(100deg, #0857AD 0%, #0B85D4 100%); display: flex; flex-direction: column; }
 
 .topbar--title {
   justify-content: center;
@@ -303,7 +367,7 @@ body {
   height: calc(119*var(--u));
   padding: 0 calc(50*var(--u));
   display: flex; align-items: center; gap: calc(36*var(--u));
-  background: var(--maroon-deep);
+  background: var(--blue-ink);
   color: #fff; font-family: inherit;
   font-size: calc(48*var(--u)); font-weight: 700; letter-spacing: calc(2*var(--u));
   border: 0; border-radius: calc(60*var(--u));
@@ -315,14 +379,14 @@ body {
 
 /* ───────────── Driver Licence detail ─────────────
    Layout measured from the recording; the content is sample data. */
-#licence { z-index: 25; background: linear-gradient(90deg, #E7A356 0%, #F5D17F 100%); display: flex; flex-direction: column; }
+#licence { z-index: 25; background: linear-gradient(90deg, #E8A457 0%, #F5D17D 100%); display: flex; flex-direction: column; }
 
 .lic-top {
   flex-shrink: 0; position: relative; z-index: 3; height: calc(442*var(--v));
   background:
-    linear-gradient(163deg, rgb(231,164,86) 0 37%, rgba(231,164,86,0) 39.5%),
-    linear-gradient(90deg, rgb(231,163,86) 0%, rgb(245,209,126) 100%);
-  background-size: calc(1284*var(--u)) calc(568*var(--v));
+    linear-gradient(163deg, rgb(232,164,87) 0 37%, rgba(232,164,87,0) 39.5%),
+    linear-gradient(90deg, rgb(232,164,87) 0%, rgb(245,209,125) 100%);
+  background-size: calc(1290*var(--u)) calc(568*var(--v));
 }
 /* The 126 units below the bar scroll away with the content, exactly as the app
    does: "Back" and the crest stay put while "Driver Licence" slides under them. */
@@ -338,9 +402,9 @@ body {
 .lic-headband {
   position: relative; height: calc(126*var(--v));
   background:
-    linear-gradient(163deg, rgb(231,164,86) 0 37%, rgba(231,164,86,0) 39.5%),
-    linear-gradient(90deg, rgb(231,163,86) 0%, rgb(245,209,126) 100%);
-  background-size: calc(1284*var(--u)) calc(568*var(--v));
+    linear-gradient(163deg, rgb(232,164,87) 0 37%, rgba(232,164,87,0) 39.5%),
+    linear-gradient(90deg, rgb(232,164,87) 0%, rgb(245,209,125) 100%);
+  background-size: calc(1290*var(--u)) calc(568*var(--v));
   background-position: 0 calc(-442*var(--v));
 }
 .lic-back {
@@ -441,7 +505,7 @@ body {
 /* the signature block is far taller than a text row */
 .lic-group:has(.lic-sign) > .lic-row { min-height: calc(265*var(--u)); }
 .lic-car  { width: calc(103*var(--u)); height: calc(57*var(--u)); margin-left: calc(-4*var(--u)); }
-.lic-ok   { color: #198051; padding-left: calc(58*var(--u)); gap: calc(31*var(--u));
+.lic-ok   { color: #3E956F; padding-left: calc(58*var(--u)); gap: calc(31*var(--u));
             position: relative; top: calc(-5*var(--v)); }
 .lic-ok svg { width: calc(65*var(--u)); height: calc(65*var(--u));
               flex: none; display: block; overflow: visible; }
@@ -450,7 +514,7 @@ body {
 .lic-under { color: #C8102E; }
 .lic-sign { width: calc(341*var(--u)); height: calc(145*var(--u)); margin-left: calc(177*var(--u)); }
 .pill-current {
-  background: #198051; color: #fff; font-weight: 400;
+  background: #3E956F; color: #fff; font-weight: 400;
   font-size: calc(50*var(--u)); line-height: 1;
   padding: calc(18.5*var(--u)) calc(26*var(--u));
   position: relative; top: calc(4*var(--v));
@@ -480,26 +544,31 @@ body {
 .scroll-wrap > .sheet  { overflow: visible; flex: none; }
 
 /* ───────────── Show QR ───────────── */
-#showqr   { z-index: 12; background: linear-gradient(90deg, #691628 0%, #94223C 100%); display: flex; flex-direction: column; }
-#scanqr   { z-index: 12; background: linear-gradient(90deg, #691628 0%, #94223C 100%); display: flex; flex-direction: column; }
-#messages { z-index: 12; background: linear-gradient(90deg, #691628 0%, #94223C 100%); display: flex; flex-direction: column; }
-#settings { z-index: 14; background: linear-gradient(90deg, #691628 0%, #94223C 100%); display: flex; flex-direction: column; }
+#showqr   { z-index: 12; background: linear-gradient(100deg, #0857AD 0%, #0B85D4 100%); display: flex; flex-direction: column; }
+#scanqr   { z-index: 12; background: linear-gradient(100deg, #0857AD 0%, #0B85D4 100%); display: flex; flex-direction: column; }
+#messages { z-index: 12; background: linear-gradient(100deg, #0857AD 0%, #0B85D4 100%); display: flex; flex-direction: column; }
+#settings { z-index: 14; background: linear-gradient(100deg, #0857AD 0%, #0B85D4 100%); display: flex; flex-direction: column; }
 
 .topbar--plain { justify-content: flex-start; height: calc(360*var(--v)); padding: 0; }
 .plain-sheet { display: flex; flex-direction: column; align-items: center; text-align: center;
-               background: #fff; padding-top: calc(49*var(--v)); }
+               background: #fff; padding-top: calc(77*var(--v)); }
 
 .qr-content[hidden] { display: none !important; }
 .qr-content { display: flex; flex-direction: column; align-items: center; width: 100%; }
 .qr-title {
-  font-size: calc(61*var(--u)); font-weight: 500; color: var(--ink);
-  line-height: calc(72*var(--u)); margin-top: 0;
+  /* f2349: cap height 47 -> 67 units; the line wraps inside a 980-wide column
+     ("Show this QR Code to share your" / "details") */
+  font-size: calc(67*var(--u)); font-weight: 700; color: var(--ink);
+  line-height: calc(78*var(--u)); margin-top: 0;
+  max-width: calc(1000*var(--u));
 }
-.qr-photo  { width: calc(328*var(--u)); height: calc(420*var(--u)); margin-top: calc(92*var(--v));
+.qr-photo  { width: calc(310*var(--u)); height: calc(420*var(--u)); margin-top: calc(43*var(--v));
              display: block; object-fit: cover; border-radius: calc(8*var(--u)); }
-.qr-code   { width: calc(550*var(--u)); height: calc(550*var(--u)); margin-top: calc(100*var(--v)); display: block; }
-.qr-spin   { position: absolute; left: 50%; top: calc(1351*var(--v));
-             transform: translateX(-50%); margin: 0; }
+.qr-code   { width: calc(550*var(--u)); height: calc(549*var(--u)); margin-top: calc(105*var(--v)); display: block; }
+/* NOTE: no translateX here — .spinner animates `transform`, which would
+   replace the centring and make the spinner jump sideways as it span. */
+.qr-spin   { position: absolute; left: 0; right: 0; top: calc(1351*var(--v));
+             margin: 0 auto; }
 .qr-spin[hidden] { display: none !important; }
 
 /* ───────────── Scan QR ───────────── */
@@ -520,8 +589,10 @@ body {
   width: calc(168*var(--u)); height: calc(168*var(--u)); flex: none;
   display: block; object-fit: cover;
 }
-.v-name { flex: 1; padding: calc(20*var(--u)) calc(30*var(--u)) calc(20*var(--u)) calc(31*var(--u));
-          font-size: calc(54*var(--u)); line-height: calc(68*var(--u)); color: var(--ink); }
+/* measured on f1890: cap height 44 -> 63 units in Fira Sans, text column
+   starting at x277 with the chevron at x1169 */
+.v-name { flex: 1; padding: calc(20*var(--u)) calc(69*var(--u)) calc(20*var(--u)) calc(34*var(--u));
+          font-size: calc(63*var(--u)); line-height: calc(76*var(--u)); color: var(--ink); }
 .v-go   { width: calc(26*var(--u)); height: calc(40*var(--u)); margin-right: calc(36*var(--u)); flex: none; }
 .v-plus { width: calc(72*var(--u)); height: calc(72*var(--u)); flex: none; }
 
@@ -576,7 +647,7 @@ body {
 .sheet.settle  { transition: padding-top .24s ease-out; }
 
 /* ───────────── Add Credentials ───────────── */
-#addcred { z-index: 16; background: linear-gradient(90deg, #691628 0%, #94223C 100%);
+#addcred { z-index: 16; background: linear-gradient(100deg, #0857AD 0%, #0B85D4 100%);
            display: flex; flex-direction: column; }
 #addcred .sheet { padding-top: calc(60*var(--v)); }
 .addcred-copy {
@@ -644,13 +715,13 @@ body {
 .set-delete { width: calc(68*var(--u)); padding: 0 calc(5*var(--u)); }
 .feedback-btn {
   display: block; width: 100%; height: calc(143*var(--u));
-  background: #620F29; color: #fff; border: 0; border-radius: calc(22*var(--u));
+  background: var(--blue-ink); color: #fff; border: 0; border-radius: calc(22*var(--u));
   font-family: inherit; font-size: calc(48*var(--u)); font-weight: 700;
   letter-spacing: calc(4.5*var(--u)); cursor: pointer;
   margin-bottom: calc(72*var(--v));
 }
-.set-logo { display: block; width: calc(396*var(--u)); height: auto;
-            margin: 0 auto calc(54*var(--v)); }
+.set-logo { width: calc(799*var(--u)); height: auto; display: block;
+            margin: calc(52*var(--v)) auto calc(34*var(--v)); }
 .set-copy { text-align: center; font-size: calc(44*var(--u)); color: #000000;
             line-height: calc(75*var(--u)); }
 .set-version { text-align: center; font-size: calc(44*var(--u)); color: #000000;
@@ -680,3 +751,139 @@ body {
 }
 .consent-btns button + button { border-left: calc(2*var(--u)) solid #C9C9CE; font-weight: 700; }
 .consent-btns button:active { background: rgba(0,0,0,.05); }
+
+
+/* ══════════ Show QR / Scan QR explainers ══════════
+   Shown the first time each tab is opened. Geometry read off f1166 (Show)
+   and f1754 (Scan): artwork from y255, buttons 948 wide inset at x171. */
+.explain {
+  /* sits over the sheet but NOT over the tab bar, which stays visible and
+     usable exactly as it does in the app */
+  position: absolute; left: 0; right: 0; top: 0; bottom: calc(312*var(--v));
+  z-index: 30; background: transparent;
+  display: flex; flex-direction: column; align-items: center;
+  padding: calc(255*var(--v)) calc(75*var(--u)) calc(250*var(--v));
+  overflow-y: auto; scrollbar-width: none; text-align: center;
+}
+.explain::-webkit-scrollbar { display: none; }
+.explain::before {                       /* blue behind the status bar */
+  content: ""; position: absolute; inset: 0; z-index: -2;
+  background:
+    linear-gradient(158deg, rgba(255,255,255,.07) 0 41.5%, rgba(255,255,255,0) 42.7%),
+    linear-gradient(100deg, rgb(8,87,173) 0%, rgb(11,133,212) 100%);
+}
+.explain::after {                        /* the page itself */
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; z-index: -1;
+  top: calc(255*var(--v)); background: #fff;
+}
+/* Scan QR shows a rounded sheet under the band; Show QR's artwork runs right
+   up to it, so only Scan gets the radius. */
+#scanExplain::after { top: calc(354*var(--v));
+                      border-radius: calc(46*var(--u)) calc(46*var(--u)) 0 0; }
+#scanExplain { padding-top: calc(400*var(--v)); }
+.explain[hidden] { display: none; }
+.explain .ex-phones { width: calc(1110*var(--u)); height: auto; display: block;
+                      margin: 0 0 calc(40*var(--v)); }
+.explain h2 { font-size: calc(62*var(--u)); font-weight: 400; color: var(--ink);
+              line-height: 1.22; margin-bottom: calc(34*var(--v)); }
+.explain p  { font-size: calc(50*var(--u)); font-weight: 400; color: var(--ink);
+              line-height: 1.3; margin-bottom: calc(26*var(--v)); }
+.explain .btn-primary, .explain .btn-ghost {
+  width: calc(948*var(--u)); height: calc(129*var(--u)); flex: none;
+  border-radius: calc(14*var(--u)); font-family: inherit;
+  font-size: calc(49*var(--u)); font-weight: 600; letter-spacing: .055em;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+}
+.explain .btn-primary { background: #2F6FC4; color: #fff; border: 0;
+                        margin-top: calc(28*var(--v)); }
+.explain .btn-ghost   { background: #fff; color: var(--blue-ink);
+                        border: calc(3*var(--u)) solid #9DC2E8;
+                        margin-top: calc(26*var(--v)); }
+.explain .ex-check { display: flex; align-items: center; gap: calc(26*var(--u));
+                     margin-top: calc(44*var(--v)); font-size: calc(50*var(--u)); }
+.explain .ex-check input { position: absolute; opacity: 0; pointer-events: none; }
+.explain .ex-check .box  { width: calc(56*var(--u)); height: calc(56*var(--u));
+                     border: calc(3*var(--u)) solid #9DC2E8; border-radius: calc(8*var(--u));
+                     flex: none; }
+.explain .ex-check input:checked + .box {
+  background: var(--blue-ink); border-color: var(--blue-ink);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 12.5l5 5 9-10' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-size: 100% 100%;
+}
+
+
+/* ══════════ Messages inbox (f2164) ══════════ */
+.msg-sheet { padding: 0; background: var(--sheet); }
+.msg-row {
+  background: var(--card); display: flex; align-items: flex-start;
+  padding: calc(44*var(--v)) calc(42*var(--u)) calc(40*var(--v)) calc(44*var(--u));
+  gap: calc(28*var(--u)); cursor: pointer;
+}
+.msg-row .msg-main  { flex: 1; }
+.msg-row .msg-title { font-size: calc(58*var(--u)); font-weight: 400; color: var(--ink);
+                      line-height: 1.24; }
+.msg-row .msg-from  { font-size: calc(44*var(--u)); color: var(--ink-soft);
+                      margin-top: calc(18*var(--v)); }
+.msg-row .msg-date  { font-size: calc(44*var(--u)); color: var(--ink); flex: none;
+                      padding-top: calc(6*var(--v)); }
+
+/* the blue ADD pill on the wallet */
+.add-btn { background: #2F6FC4; }
+
+
+/* ══════════ Message detail (f2099) ══════════ */
+#msgdetail { z-index: 18; background: linear-gradient(100deg, #0857AD 0%, #0B85D4 100%);
+             display: flex; flex-direction: column; }
+.topbar--msg {
+  flex-shrink: 0; display: flex; align-items: center; justify-content: space-between;
+  padding: calc(236*var(--v)) calc(56*var(--u)) calc(52*var(--v));
+  background:
+    linear-gradient(158deg, rgba(255,255,255,.07) 0 41.5%, rgba(255,255,255,0) 42.7%),
+    linear-gradient(100deg, rgb(8,87,173) 0%, rgb(11,133,212) 100%);
+}
+.topbar--msg .msg-back { display: flex; align-items: center; gap: calc(18*var(--u));
+                         color: #fff; font-size: calc(58*var(--u)); cursor: pointer; }
+.topbar--msg .msg-back svg { width: calc(24*var(--u)); height: calc(40*var(--u)); display: block; }
+.topbar--msg .msg-delete { color: #fff; font-size: calc(58*var(--u)); cursor: pointer; }
+
+.msgd-sheet { background: #fff; padding: calc(60*var(--v)) calc(66*var(--u)) calc(120*var(--v)); }
+.msgd-title { font-size: calc(68*var(--u)); font-weight: 700; color: var(--ink);
+              line-height: calc(84*var(--u)); }
+.msgd-from  { font-size: calc(58*var(--u)); color: var(--ink-soft); margin-top: calc(26*var(--v)); }
+.msgd-when  { font-size: calc(48*var(--u)); color: var(--ink-soft); margin-top: calc(18*var(--v)); }
+.msgd-rule  { border: 0; border-top: calc(2*var(--u)) solid var(--hair);
+              margin: calc(40*var(--v)) 0 calc(38*var(--v)); }
+.msgd-p     { font-size: calc(54*var(--u)); color: var(--ink); line-height: calc(70*var(--u));
+              margin-bottom: calc(34*var(--v)); }
+.msgd-link  { color: var(--blue-ink); text-decoration: underline; }
+
+/* Settings: the dark-mode row icon and the dark footer lockup (f0848 / f0920) */
+.set-dark { width: calc(65*var(--u)); height: calc(65*var(--u)); }
+
+/* The looping explainer under the QR code: a phone shows its code, a second
+   phone scans it, then a tick. 36 frames lifted from the recording, played at
+   the measured 4.773 s period (249 frames at 52.17 fps). */
+.qr-phone {
+  /* Measured on the 16-56-54 recording: the glyph occupies x522..767, y1823..2052
+     and the loop repeats every 240 frames at 59.529 fps = 4.032 s.
+
+     The strip moves with transform, NOT background-position. Percentage
+     background-position is relative to (box width - image width), so across
+     48 frames each step lands 47/48 of a frame along: you see two frames at
+     once, drifting sideways. Transform percentages are relative to the element
+     itself, so the strip steps exactly one frame at a time. */
+  width: calc(250*var(--u)); height: calc(236*var(--u));
+  margin-top: calc(110*var(--v)); display: block; flex: none;
+  position: relative; overflow: hidden;
+}
+.qr-phone::before {
+  content: ""; position: absolute; inset: 0 auto 0 0;
+  width: 4800%; height: 100%;              /* 48 frames side by side */
+  background: url("img/qr-phone-anim.png?v=1794380597") left top / 100% 100% no-repeat;
+  animation: qr-phone-loop 4.032s steps(48) infinite;
+}
+/* percentage background-position is relative to (box - image), so the sprite
+   steps from 0% to 100% — a negative percentage lands outside the image. */
+@keyframes qr-phone-loop { from { transform: translateX(0); }
+                           to   { transform: translateX(-100%); } }
+@media (prefers-reduced-motion: reduce) { .qr-phone::before { animation: none; } }

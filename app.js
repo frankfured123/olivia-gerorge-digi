@@ -44,6 +44,7 @@
   var messages = document.getElementById('messages');
   var settings = document.getElementById('settings');
   var addcred  = document.getElementById('addcred');
+  var msgdetail = document.getElementById('msgdetail');
   var consent  = document.getElementById('consent');
   var byId = { home: null, wallet: null, licence: licence, showqr: showqr,
                scanqr: scanqr, messages: messages, settings: settings, addcred: addcred };
@@ -366,12 +367,12 @@
     var code  = showqr.querySelector('.qr-code');
     spin.removeAttribute('hidden'); body.hidden = true;
     photo.style.visibility = code.style.visibility = 'hidden';
+    // Measured on the 09-11 recording: the heading, photo and code all land
+    // together 1022 ms after the spinner starts — no stagger any more.
     qrTimers.push(setTimeout(function () {
       spin.setAttribute('hidden', ''); body.hidden = false;
-    }, 1140));
-    qrTimers.push(setTimeout(function () {
       photo.style.visibility = code.style.visibility = 'visible';
-    }, 1350));
+    }, 1022));
   }
 
   /* "Information was refreshed online" reads the device clock, in the phone's
@@ -503,14 +504,30 @@
 
   /* Hard cut, the way the app switches screens */
   function show(screen) {
-    [splash, pin, loading, home, wallet, licence, showqr, scanqr, messages, settings, addcred]
+    [splash, pin, loading, home, wallet, licence, showqr, scanqr, messages, settings, addcred, msgdetail]
       .forEach(function (s) { s.hidden = (s !== screen); });
     consent.hidden = true;
     if (screen === licence) stampNow();
     if (screen === home && syncLearn) syncLearn();
     if (screen === showqr) runShowQr();
     else { qrTimers.forEach(clearTimeout); qrTimers = []; }
+
+    // Both QR tabs open on their explainer the first time, exactly as the app
+    // does; "GOT IT" dismisses it for the rest of the session.
+    var ex = screen.querySelector && screen.querySelector('.explain');
+    if (ex && !ex.dataset.done) ex.hidden = false;
   }
+
+  document.addEventListener('click', function (e) {
+    if (e.target.closest && e.target.closest('.msg-row')) { show(msgdetail); return; }
+    if (e.target.closest && e.target.closest('[data-back-msg]')) { show(messages); return; }
+    var hit = e.target.closest && e.target.closest('[data-gotit]');
+    if (!hit) return;
+    var ex = hit.closest('.explain');
+    ex.dataset.done = '1';
+    ex.hidden = true;
+    if (hit.dataset.gotit === 'showqr') runShowQr();
+  });
 
   (function greet() {
     var h = new Date().getHours();
